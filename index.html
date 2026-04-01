@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro Escolar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="topo">
+      <div>
+        <p class="badge">Dashboard Escolar</p>
+        <h1>Controle Financeiro Escolar</h1>
+        <p class="subtitulo">
+          Organize entradas, saídas e acompanhe a saúde financeira da escola em tempo real.
+        </p>
+      </div>
+    </header>
+
+    <p id="mensagem-sucesso" class="mensagem-sucesso oculto">
+      Movimentação adicionada com sucesso.
+    </p>
+
+    <section class="resumo">
+      <div class="card card-saldo">
+        <p>Saldo Atual</p>
+        <h2 id="saldo">R$ 0,00</h2>
+      </div>
+
+      <div class="card card-entrada">
+        <p>Total de Entradas</p>
+        <h2 id="entradas">R$ 0,00</h2>
+      </div>
+
+      <div class="card card-saida">
+        <p>Total de Saídas</p>
+        <h2 id="saidas">R$ 0,00</h2>
+      </div>
+    </section>
+
+    <section class="conteudo-principal">
+      <div class="painel formulario">
+        <h3>Nova Movimentação</h3>
+
+        <form id="form-transacao">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" placeholder="Ex: Festa junina, material escolar, mensalidade">
+
+          <label for="valor">Valor</label>
+          <input type="text" id="valor" placeholder="Ex: 1.500,00">
+
+          <label for="tipo">Tipo</label>
+          <select id="tipo">
+            <option value="">Selecione</option>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+          </select>
+
+          <label for="origem">Origem do recurso</label>
+          <select id="origem">
+            <option value="">Selecione</option>
+            <option value="Secretaria">Secretaria</option>
+            <option value="Evento">Evento</option>
+            <option value="Mensalidade">Mensalidade</option>
+            <option value="Recurso próprio">Recurso próprio</option>
+            <option value="Doação">Doação</option>
+          </select>
+
+          <label for="data">Data</label>
+          <input type="date" id="data">
+
+          <button type="submit" class="botao-adicionar">Adicionar movimentação</button>
+        </form>
+      </div>
+
+      <div class="painel lista">
+        <div class="titulo-lista">
+          <h3>Lançamentos</h3>
+          <button id="limpar-tudo" class="botao-secundario">Limpar tudo</button>
+        </div>
+
+        <div id="lista-transacoes" class="lista-transacoes">
+          <p class="mensagem-vazia">Nenhuma movimentação ainda. Adicione sua primeira entrada ou saída.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
